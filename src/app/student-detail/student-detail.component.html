@@ -1,0 +1,19 @@
+<p>student-detail works!</p>
+
+<a [routerLink]="['/student-list']" routerLinkActive="router-link-active" > Students List </a>
+<a routerLink='/student-list' routerLinkActive="router-link-active" > Students List </a>
+
+<table>
+    <tr>
+        <td>Student ID</td>
+        <td>Student name</td> 
+        <td>Student email</td>
+    </tr>
+    <tr>
+        <td>{{student.id}}</td>
+        <td> {{student.firstName}} {{student.lastName}}</td>
+        <td> {{student.email}}</td>
+    </tr>
+</table>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,10 @@
+<p>student-list works!</p>
+
+<div *ngFor="let std of studentsList">
+<a [routerLink]="['/student-details',std.id]" routerLinkActive="router-link-active" > {{std.firstName}} </a>
+{{std.id == 1 ? 'y' : std.id == 2 ? 'yes' : 'other'}}
+</div>
+ 
+
+
+<router-outlet></router-outlet>

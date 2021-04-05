@@ -8,7 +8,8 @@ const routes: Routes = [
   {path:"student-list", component:StudentListComponent},
   {path:"", redirectTo: "student-list", pathMatch:"full"}, 
   {path:"student-details/:id", component: StudentDetailComponent},
-  {path:"**" , component:PageNotFoundComponent  }
+  {path:"**" , component:StudentListComponent}
+  // {path:"**" , component:PageNotFoundComponent  }
 ];
 
 @NgModule({

@@ -1,65 +1,44 @@
 <div class="container">
     <div class="row">
-        <p>student-form works!</p>
-             
-        firstForm.value:  {{ firstForm.value | json}}
+        <p>student-form works!22</p>
+
+        firstForm.value: {{ firstForm.value | json}}
         <br>
         firstForm.valid: {{firstForm.valid}}
         <br>
         firstForm.dirty: {{firstForm.dirty}}
-        <br> 
+        <br>
         firstForm.touched: {{firstForm.touched}}
-<br>
-<div *ngIf="firstForm.submitted">
-    studentDB:   {{studentDB | json}}
-    </div>
-<h1> Student Form </h1>
-        <form method="POST"
-         #firstForm="ngForm"
-         (ngSubmit)="onSubmit(firstForm)"
-         class="col-md-4">
+        <br>
+        <div *ngIf="firstForm.submitted">
+            studentDB: {{studentDB | json}}
+        </div>
+        <h1> Student Form </h1>
+        <form method="POST" #firstForm="ngForm" (ngSubmit)="onSubmit(firstForm)" class="col-md-4">
 
             <div>
-                <label for="id" class="control-lable" [class.text-danger]="!id.valid" >
-                    Student ID: 
+                <label for="id" class="control-lable" [class.text-danger]="!id.valid">
+                    Student ID:
                 </label>
-                <input
-                type="text" 
-                name="id" 
-                #id="ngModel"
-                [(ngModel)]="student.id" 
-                class="form-control"
-                required
-                />
+                <input type="text" name="id" #id="ngModel" [(ngModel)]="student.id" class="form-control" required />
                 <div *ngIf="id.errors?.required">
-                        <span class="text-danger">
-                            Warning: Student ID is required
-                        </span>
+                    <span class="text-danger">
+                        Warning: Student ID is required
+                    </span>
                 </div>
             </div>
             <div ngModelGroup="fullName">
                 <div>
-                    <input 
-                    type="text" 
-                    name="firstname" 
-                    #firstname="ngModel"
-                    [(ngModel)]="student.firstname" 
-                    required
-                    class="form-control"
-                    />
+                    <input type="text" name="firstname" #firstname="ngModel" [(ngModel)]="student.firstname" required
+                        class="form-control" />
                 </div>
                 <div>
-                    <input 
-                    type="text" 
-                    name="lastname"
-                    #lastname="ngModel" 
-                    [(ngModel)]="student.lastname" 
-                    class="form-control"
-                    />
+                    <input type="text" name="lastname" #lastname="ngModel" [(ngModel)]="student.lastname"
+                        class="form-control" />
                 </div>
             </div>
             <div>
-                <input type="text" name="email" [(ngModel)]="student.email" class="form-control"/>
+                <input type="text" name="email" [(ngModel)]="student.email" class="form-control" />
             </div>
             <div>
                 <select name="city" [(ngModel)]="student.city" class="form-control">
@@ -68,12 +47,12 @@
                 </select>
             </div>
             <div>
-                <input type="radio" name="gender" value="female" [(ngModel)]="student.gender" class="form-control"/>
-                <input type="radio" name="gender" value="male" [(ngModel)]="student.gender" class="form-control"/>
-                <input type="radio" name="gender" value="other" [(ngModel)]="student.gender" class="form-control"/>
+                <input type="radio" name="gender" value="female" [(ngModel)]="student.gender" class="form-control" />
+                <input type="radio" name="gender" value="male" [(ngModel)]="student.gender" class="form-control" />
+                <input type="radio" name="gender" value="other" [(ngModel)]="student.gender" class="form-control" />
             </div>
             <div>
-                <input type="submit" name="save" value="save" class="form-control"/>
+                <input type="submit" name="save" value="save" class="form-control" />
             </div>
         </form>
 
